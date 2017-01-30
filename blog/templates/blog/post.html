@@ -1,0 +1,127 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static "css/reset.css" %}">
+	<link rel="stylesheet" href="{% static "css/post.css" %}">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}">
+	<link rel="stylesheet" href="{% static "css/fonts/arvo/arvo.css" %}">
+	<link rel="stylesheet" href="{% static "css/fonts/merriweather/merriweather.css" %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="{% static "js/slide.js" %}"></script>
+	<script src="{% static "js/hover.js" %}"></script>
+</head>
+<body>
+	<header>
+		<div class="name">
+			<a href="img/article-image.jpg"><h1>Блог <span class="name-name"><b>Натальи Бондарчук</b></span></h1></a>
+			<h3>Век живи&mdash;век учись</h3>
+		</div>
+		<div class="full-gray-line"></div>
+		<nav>
+			<ul>
+				<li><a href="{% url "blog:HomePage" %}">Домой</a></li>
+				<li class="separator">/</li>
+				<li><a href="#">О себе</a></li>
+				<li class="separator">/</li>
+				<li><a href="#">Публикации</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="wrapper">
+		<main>
+			<article>
+					<h2>
+						{{ post.title }}
+					</h2>
+				<div class="date">
+					<div class="date-number">{{ post.published_date|date:"j" }}</div>
+                    <div class="number-border"></div>
+                    <div class="date-month">{{ post.published_date|date:"M" }}</div>
+                    <div class="date-year">{{ post.published_date|date:"Y" }}</div>
+				</div>
+				<div class="article">
+					
+					<img src="{{ post.image.url }}" alt="">
+
+					<div class="article-text">
+                        <p>{{ post.text }}</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</article>
+		</main>
+		<aside>
+			<div class="popular">
+				<div class="center">
+					<div class="keyword">Популярное</div>
+				</div>
+				<a href="#">
+					<div class="post">
+						<img src="img/milashka.png" alt="">
+						<div class="post-text">Lorem ipsum dolor sit amet</div>
+						<div class="post-date">14 февраля 2017</div>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="post">
+						<img src="img/milashka.png" alt="">
+						<div class="post-text">Lorem ipsum dolor sit amet</div>
+						<div class="post-date">14 февраля 2017</div>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="post">
+						<img src="img/milashka.png" alt="">
+						<div class="post-text">Lorem ipsum dolor sit amet</div>
+						<div class="post-date">14 февраля 2017</div>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="post">
+						<img src="img/milashka.png" alt="">
+						<div class="post-text">Lorem ipsum dolor sit amet</div>
+						<div class="post-date">14 февраля 2017</div>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div> <!-- Popular ends -->
+			<div class="archive">
+				<div class="center">
+					<div class="keyword">Архив</div>
+				</div>
+				<div class="archive-content">
+					<ul class="archive-year">
+						<h4>2016</h4>
+						<li class="archive-month">
+							<h5>Март</h5>
+							<ul>
+								<li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+								<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></li>
+							</ul>
+						</li>
+						<li class="archive-month">
+							<h5>Август</h5>
+							<ul>
+								<li><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></li>
+								<li><a href="#">Lorem ipsum.</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</aside>
+		<div class="clearfix"></div>
+	</div>
+	<footer>
+		<div class="footer-text"><span class="white-text">Lorem ipsum</span> dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt</div>
+	</footer>
+</body>
+</html>

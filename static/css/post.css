@@ -1,0 +1,49 @@
+main{
+	padding-right: 40px !important;
+}
+
+.date{
+	width: 60px;
+}
+
+.date-number{
+	font-size: 35px;
+	line-height: 17px;
+	padding-top: 5px;
+}
+
+.number-border{
+	width: 36px;
+}
+
+.date-month{
+	font-size: 18px;
+}
+
+.date-year{
+	font-size: 10px;
+}
+
+article h2{
+	margin: 40px 40px 30px 60px;
+}
+
+article img{
+	margin-bottom: 40px;
+}
+
+.article-text{
+	color: #505050;
+	font-family: Arvo;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.article p{
+	margin: 40px 0;
+}
+
+.article p:last-child{
+	margin-bottom: 50px;
+}
